@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <script>
@@ -340,19 +340,19 @@ function calculateTotal() {
         if(pressing != 0){
           pressing = Math.ceil(Number(fmvInput.value) * (1.5/100)); //1.5%
         }
-        if(grading + pressing > 500) //Grading/Pressing cap of $500
+        if(grading + pressing > 1000) //Grading/Pressing cap of $1000
           if(grading != 0 && pressing != 0)
           {
-              grading = 250;
-              pressing = 250;
+              grading = 500;
+              pressing = 500;
           }
           else if(grading != 0)
           {
-            grading = 500;
+            grading = 1000;
           }
           else if(pressing != 0)
           {
-            pressing = 500;
+            pressing = 1000;
           }
 
       }
@@ -1161,7 +1161,7 @@ select, input {
 	<input type="text" id="tableInput" data-key="%total_amount%" style="width: 65px;" readonly></td></tr>
 </table>
 <button class="no-print" onclick="manyRows(5)" style="width:200px; height:60px; font-size:30px;">More Rows</button>
-&nbsp&nbsp By filling out this form you agree to the <a href="http://pgxcomics.com/legal-information-2/">Legal Info</a> at pgxcomics.com&nbsp&nbsp&nbsp&nbspOrder Form v1.2
+&nbsp&nbsp By filling out this form you agree to the <a href="http://pgxcomics.com/legal-information-2/">Legal Info</a> at pgxcomics.com&nbsp&nbsp&nbsp&nbspOrder Form v1.3
 </div><!--Absolute Position-->
 </body>
 </html>
