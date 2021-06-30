@@ -124,12 +124,13 @@ function adjust_Printing()
   }
 }
 
-function setSpecial_New(vis){
-	if(vis == true)
-	    document.getElementsByClassName("special_new")[0].value = "New Customer 10% discount on first submission of five books (limited to the first twenty books)";
-	else
-		document.getElementsByClassName("special_new")[0].value = "";
-}
+// Disabled as the 10% off coupon is no longer active for new users
+// function setSpecial_New(vis){
+// 	if(vis == true)
+// 	    document.getElementsByClassName("special_new")[0].value = "New Customer 10% discount on first submission of five books (limited to the first twenty books)";
+// 	else
+// 		document.getElementsByClassName("special_new")[0].value = "";
+// }
 
 function setSpecial1(vis){
 	if(vis == true) {
@@ -193,8 +194,9 @@ function calculateTotal() {
   var totalInsurance = 0;
   var totalDiscount = 0;
   var is_new_customer = document.getElementById("newcustomer").checked;
-  var new_customer_book_limit_reached = false;
-  var new_customer_discount = 0;
+// Disabled as the 10% off coupon is no longer active for new users
+// var new_customer_book_limit_reached = false;
+// var new_customer_discount = 0;
   var discount1 = 0;
   var discount1_Qty = 0;
   var discount2 = 0;
@@ -440,13 +442,14 @@ function calculateTotal() {
       totalQty += qty;
     }
 
-  if (is_new_customer && totalQty <= 20)
-    new_customer_discount += total * -0.1;
-    else if (is_new_customer && !new_customer_book_limit_reached && (totalQty - lastQty != 0))
-    {
-      new_customer_discount += total * ((20 - lastQty)/(totalQty - lastQty)) * -0.1;
-      new_customer_book_limit_reached = true;
-    }
+// Disabled as the 10% off coupon is no longer active for new users
+//   if (is_new_customer && totalQty <= 20)
+//     new_customer_discount += total * -0.1;
+//     else if (is_new_customer && !new_customer_book_limit_reached && (totalQty - lastQty != 0))
+//     {
+//       new_customer_discount += total * ((20 - lastQty)/(totalQty - lastQty)) * -0.1;
+//       new_customer_book_limit_reached = true;
+//     }
 
   if(gradingInput.value == "golden_express" || gradingInput.value == "standard_express" || gradingInput.value == "modern_express")
   {
@@ -490,13 +493,14 @@ function calculateTotal() {
 
   totalFMV = Math.ceil(totalFMV / 100) * 100;
 
-  if (new_customer_discount < 0 && totalQty >= 5)
-  {
-    totalDiscount += new_customer_discount;
-    setSpecial_New(true);
-  }
-  else
-    setSpecial_New(false);
+// Disabled as the 10% off coupon is no longer active for new users
+//   if (new_customer_discount < 0 && totalQty >= 5)
+//   {
+//     totalDiscount += new_customer_discount;
+//     setSpecial_New(true);
+//   }
+//   else
+//     setSpecial_New(false);
 
   if (!is_new_customer)
     {
@@ -1146,7 +1150,8 @@ select, input {
   <tr><td colspan="4"></td><td>TOTAL QUANTITY</td><td><input type="text" id="tableInput" data-key="%total_quantity%" style="width: 100px;" readonly></td><td colspan="2">TOTAL</td><td style="text-align:right;">
 	<input type="text" id="tableInput" data-key="%total%" style="width: 65px;" readonly></td></tr>
   <tr><td colspan="6">
-    <div style="display: inline"><input type="text" id="tableInput" class="special_new" data-key="%discount1%" style="width: 750px;" readonly></div>
+<!-- Disabled as the 10% off coupon is no longer active for new users -->
+<!--     <div style="display: inline"><input type="text" id="tableInput" class="special_new" data-key="%discount1%" style="width: 750px;" readonly></div> -->
   </td><td colspan="2">DISCOUNT</td><td style="text-align:right;"><input type="text" id="tableInput" data-key="%discount%" style="width: 65px;" readonly></td></tr>
   <tr><td colspan="6">
 	<div style="display: inline"><input type="radio" data-key="%discount2%" style="visibility: hidden;" id="special1Radio" name="discount" value="special1" onchange="calculateTotal()">
