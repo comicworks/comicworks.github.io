@@ -132,21 +132,22 @@ function adjust_Printing()
 // 		document.getElementsByClassName("special_new")[0].value = "";
 // }
 
-function setSpecial1(vis){
-	if(vis == true) {
-		document.getElementsByClassName("special1")[0].value = "#1 -10% Express Grading";
-		document.getElementById("special1Radio").style.visibility = "visible";
-	}
-	else {
-		document.getElementsByClassName("special1")[0].value = "";
-		document.getElementById("special1Radio").style.visibility = "hidden";
-		document.getElementById("special1Radio").checked = false;
-	}
-}
+// Disabled as the 10% with 10 or more express grades is no longer active
+// function setSpecial1(vis){
+// 	if(vis == true) {
+// 		document.getElementsByClassName("special1")[0].value = "#1 -10% Express Grading";
+// 		document.getElementById("special1Radio").style.visibility = "visible";
+// 	}
+// 	else {
+// 		document.getElementsByClassName("special1")[0].value = "";
+// 		document.getElementById("special1Radio").style.visibility = "hidden";
+// 		document.getElementById("special1Radio").checked = false;
+// 	}
+// }
 
 function setSpecial2(vis){
 	if(vis == true) {
-		document.getElementsByClassName("special2")[0].value = "#2 -20% 3 Day Grading Service";
+		document.getElementsByClassName("special2")[0].value = "#1 -20% 3 Day Grading Service";
 		document.getElementById("special2Radio").style.visibility = "visible";
 	}
 	else {
@@ -158,7 +159,7 @@ function setSpecial2(vis){
 
 function setSpecial3(vis){
 	if(vis == true) {
-		document.getElementsByClassName("special3")[0].value = "#3 2 Free Pressings";
+		document.getElementsByClassName("special3")[0].value = "#2 2 Free Pressings";
 		document.getElementById("special3Radio").style.visibility = "visible";
 	}
 	else {
@@ -504,12 +505,13 @@ function calculateTotal() {
 
   if (!is_new_customer)
     {
-      if (discount1_Qty >= 10)
-      setSpecial1(true);
-      else
-      {
-      setSpecial1(false);
-      }
+// Disabled as the 10% with 10 or more express grades is no longer active	    
+//       if (discount1_Qty >= 10)
+//       setSpecial1(true);
+//       else
+//       {
+//       setSpecial1(false);
+//       }
 
       if (discount2_Qty >= 5)
       setSpecial2(true);
@@ -526,7 +528,8 @@ function calculateTotal() {
       }
     }
   else {
-    setSpecial1(false);
+// Disabled as the 10% with 10 or more express grades is no longer active	  
+//     setSpecial1(false);
     setSpecial2(false);
     setSpecial3(false);
   }
