@@ -403,19 +403,13 @@ function calculateTotal() {
       case "nine":
         signature = 95;
         break;
-      case "witnessed":
-        signature = 8;
-        break;
       }
       if (signature != 0)
       last.style.backgroundColor = "#C49F79";
 
       switch (recaseInput.value) {
-        case "re-case":
-          other = 9;
-          break;
-        case "re-label":
-          other = 11;
+        case "re-label-re-case":
+          other = 12;
           break;
         }
 
@@ -637,10 +631,10 @@ function additionalRows() {
     cell5.innerHTML = "<select id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"pressing1\" class=\"no-print-hide\" onchange=\"calculateTotal()\" style=\"width: 130px;\"><option value=\"none\"></option><option value=\"standard\">Standard</option><option value=\"modern\">Modern</option><option value=\"pre-screen_standard\">Pre-Screen Std.</option><option value=\"pre-screen_modern\">Pre-Screen Mod.</option></select>";
     fillnum--;
     var cell6 = row.insertCell(5);
-    cell6.innerHTML = "<select id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"signature1\" class=\"no-print-hide\" onchange=\"calculateTotal()\" style=\"width: 100px;\"><option value=\"none\"></option><option value=\"single\">Single</option><option value=\"multiple\" disabled>Multiple</option><option value=\"two\">2</option><option value=\"three\">3</option><option value=\"four\">4</option><option value=\"five\">5</option><option value=\"six\">6</option><option value=\"seven\">7</option><option value=\"eight\">8</option><option value=\"nine\">9</option><option value=\"witnessed\">Witnessed</option></select>";
+    cell6.innerHTML = "<select id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"signature1\" class=\"no-print-hide\" onchange=\"calculateTotal()\" style=\"width: 100px;\"><option value=\"none\"></option><option value=\"single\">Single</option><option value=\"multiple\" disabled>Multiple</option><option value=\"two\">2</option><option value=\"three\">3</option><option value=\"four\">4</option><option value=\"five\">5</option><option value=\"six\">6</option><option value=\"seven\">7</option><option value=\"eight\">8</option><option value=\"nine\">9</option></select>";
     fillnum--;
     var cell7 = row.insertCell(6);
-    cell7.innerHTML = "<select id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"other1\" class=\"no-print-hide\" onchange=\"calculateTotal()\" style=\"width: 120px;\"><option value=\"none\"></option><option value=\"re-case\">$9 Re-Case</option><option value=\"re-label\">$11 Re-Label</option><option value=\"pre-screen1\" disabled>Pre-Screen</option><option value=\"pre-screen2\" disabled>Minimum</option><option value=\"pre-screen3\" disabled>Grade</option><option value=\"grade\">9.8</option> <option value=\"grade\">9.6</option> <option value=\"grade\">9.4</option> <option value=\"grade\">9.2</option> <option value=\"grade\">9.0</option><option value=\"grade\">8.5</option> <option value=\"grade\">8.0</option><option value=\"grade\">7.5</option> <option value=\"grade\">7.0</option><option value=\"grade\">6.5</option> <option value=\"grade\">6.0</option><option value=\"grade\">5.5</option> <option value=\"grade\">5.0</option><option value=\"grade\">4.5</option> <option value=\"grade\">4.0</option><option value=\"grade\">3.5</option> <option value=\"grade\">3.0</option><option value=\"grade\">2.5</option> <option value=\"grade\">2.0</option><option value=\"grade\">1.8</option> <option value=\"grade\">1.5</option> <option value=\"grade\">1.0</option><option value=\"grade\">0.5</option> <option value=\"grade\">0.3</option> <option value=\"grade\">0.1</option></select>";
+    cell7.innerHTML = "<select id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"other1\" class=\"no-print-hide\" onchange=\"calculateTotal()\" style=\"width: 120px;\"><option value=\"none\"></option><option value=\"re-label-re-case\">$12 Re-Label/Re-Case</option><option value=\"pre-screen1\" disabled>Pre-Screen</option><option value=\"pre-screen2\" disabled>Minimum</option><option value=\"pre-screen3\" disabled>Grade</option><option value=\"grade\">9.8</option> <option value=\"grade\">9.6</option> <option value=\"grade\">9.4</option> <option value=\"grade\">9.2</option> <option value=\"grade\">9.0</option><option value=\"grade\">8.5</option> <option value=\"grade\">8.0</option><option value=\"grade\">7.5</option> <option value=\"grade\">7.0</option><option value=\"grade\">6.5</option> <option value=\"grade\">6.0</option><option value=\"grade\">5.5</option> <option value=\"grade\">5.0</option><option value=\"grade\">4.5</option> <option value=\"grade\">4.0</option><option value=\"grade\">3.5</option> <option value=\"grade\">3.0</option><option value=\"grade\">2.5</option> <option value=\"grade\">2.0</option><option value=\"grade\">1.8</option> <option value=\"grade\">1.5</option> <option value=\"grade\">1.0</option><option value=\"grade\">0.5</option> <option value=\"grade\">0.3</option> <option value=\"grade\">0.1</option></select>";
     fillnum--;
     var cell8 = row.insertCell(7);
     cell8.innerHTML = "<input type=\"number\" id=\"tableInput\" data-key=\"fill_" + fillnum + "\" name=\"fmv\" class=\"no-print-hide\" min=\"0\" max=\"30000\" step=10 onchange=\"calculateTotal()\" style=\"width: 60px;\">";
